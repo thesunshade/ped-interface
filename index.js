@@ -1,6 +1,6 @@
 // import { dppnDpr } from "./dppnDpr.js";
 import { ped } from "./ped.js";
-const dictionaryArea = document.getElementById("dictionary-area");
+const list = document.getElementById("list");
 const definitionArea = document.getElementById("definition");
 import fuzzy from "./fuzzy.js";
 // function buildDictionaryHtmlInDivs(dictionary) {
@@ -8,14 +8,14 @@ import fuzzy from "./fuzzy.js";
 //   dictionary.forEach(entry => {
 //     html += `<div class="entry"><div class="head-word">${entry[0]}</div>  ${entry[1]}</div>`;
 //   });
-//   dictionaryArea.innerHTML = html;
+//   list.innerHTML = html;
 // }
 // function buildDictionaryHtml(dictionary) {
 //   let html = "<ul>";
 //   dictionary.forEach(entry => {
 //     html += `<li>${entry[0].toLowerCase()}</li>`;
 //   });
-//   dictionaryArea.innerHTML = html + "</ul>";
+//   list.innerHTML = html + "</ul>";
 // }
 // function buildDic(ped) {
 //   let html = "";
@@ -25,20 +25,32 @@ import fuzzy from "./fuzzy.js";
 //   console.log(html);
 // }
 // buildDic(ped);
+
+let fuzzyMode = true;
+
 const inputWord = document.getElementById("word-input");
 inputWord.focus();
 inputWord.addEventListener("input", e => {
   if (!e.currentTarget.value || e.currentTarget.value.length <= 2) {
-    dictionaryArea.innerHTML = "";
+    list.innerHTML = "";
   } else if (e.currentTarget.value && e.currentTarget.value.length > 2) {
     {
       let htmlList = `<ul class="results">`;
-      ped.forEach((item, index) => {
-        if (new RegExp(fuzzy(e.currentTarget.value), "i").test(fuzzy(item[0]))) {
-          htmlList += `<li class="item" id="${index}">${item[0]}</li>`;
-        }
-      });
-      dictionaryArea.innerHTML = htmlList + "</ul>";
+      console.log(fuzzyMode);
+      if (fuzzyMode === true) {
+        ped.forEach((item, index) => {
+          if (new RegExp(fuzzy(e.currentTarget.value), "i").test(fuzzy(item[0]))) {
+            htmlList += `<li class="item" id="${index}">${item[0]}</li>`;
+          }
+        });
+      } else if (fuzzyMode === false) {
+        ped.forEach((item, index) => {
+          if (new RegExp(e.currentTarget.value, "i").test(item[0])) {
+            htmlList += `<li class="item" id="${index}">${item[0]}</li>`;
+          }
+        });
+      }
+      list.innerHTML = htmlList + "</ul>";
 
       const resultList = document.querySelectorAll(".item");
       resultList.forEach(listItem => {
