@@ -6,6 +6,13 @@ body {
   font-family: sans-serif;
 }
 
+input#fuzzy-box {
+  margin-right: 1rem;
+}
+label#for-fuzzy-box {
+  margin-left: 1rem;
+}
+
 #definition {
   width: 70vw;
   margin-bottom: 1rem;
@@ -86,5 +93,12 @@ li p {
 
   dd {
     margin-left: 0px;
+  }
+
+  ol {
+    padding-left: 1rem;
+  }
+  dt {
+    margin-bottom: 1rem;
   }
 }

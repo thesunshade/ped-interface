@@ -35,16 +35,6 @@ inputWord.addEventListener("input", e => {
     list.innerHTML = "";
   } else if (inputWord.value && inputWord.value.length > 2) {
     createResultList();
-
-    const resultList = document.querySelectorAll(".item");
-    resultList.forEach(listItem => {
-      listItem.addEventListener("click", e => {
-        definitionArea.innerHTML = `<h1>${ped[e.currentTarget.id][0]} <a href="https://suttacentral.net/define/${
-          ped[e.currentTarget.id][0]
-        }" title="Go to the entry on SuttaCentral.net" target="_blank">🔗</a></h1>${ped[e.currentTarget.id][1]}`;
-        window.scrollTo(0, 0);
-      });
-    });
   }
 });
 
@@ -81,4 +71,22 @@ function createResultList() {
     });
   }
   list.innerHTML = htmlList + "</ul>";
+
+  const resultList = document.querySelectorAll(".item");
+  resultList.forEach(listItem => {
+    listItem.addEventListener("click", e => {
+      definitionArea.innerHTML = `<h1>${ped[e.currentTarget.id][0]} <a href="https://suttacentral.net/define/${
+        ped[e.currentTarget.id][0]
+      }" title="Go to the entry on SuttaCentral.net" target="_blank">🔗</a></h1>${ped[e.currentTarget.id][1]}`;
+      window.scrollTo(0, 0);
+      // const terms = document.getElementsByClassName("term");
+      // console.log(terms);
+      // terms.addEventListener("click", e => {
+      //   definitionArea.innerHTML = `<h1>${ped[e.currentTarget.id][0]} <a href="https://suttacentral.net/define/${
+      //     ped[e.currentTarget.id][0]
+      //   }" title="Go to the entry on SuttaCentral.net" target="_blank">🔗</a></h1>${ped[e.currentTarget.id][1]}`;
+      //   window.scrollTo(0, 0);
+      // });
+    });
+  });
 }
