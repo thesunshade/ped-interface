@@ -28,8 +28,8 @@ if (localStorage.fuzzyMode === undefined) {
 }
 
 fuzzyBox.addEventListener("click", e => {
-  fuzzyMode = e.originalTarget.checked;
-  localStorage.fuzzyMode = e.originalTarget.checked;
+  fuzzyMode = fuzzyBox.checked;
+  localStorage.fuzzyMode = fuzzyBox.checked;
   createResultList();
 });
 
