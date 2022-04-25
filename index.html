@@ -17,8 +17,16 @@
             mode</label>
         <div id="list"></div>
     </div>
-    <div id="definition">Enter a word or part of word. Regex is allowed.<br>Then click on an entry to see the
-        definition.
+    <div id="definition">Enter a word or part of word. Then click on an entry to see the
+        definition. <br>
+        Regex is allowed. For example:
+        <ul class="instructions-list">
+            <li><span class="code">^dham</span> will give results that <i>start</i> with "dham"</li>
+            <li><span class="code">am$</span> will give results that <i>end</i> with "am"</li>
+            <li><span class="code">dh*am</span> will give results that contain <i>either</i> "dham" or "dam" with fuzzy
+                mode disabled</li>
+            <li><span class="code">su[pv]a</span> will give results that contain <i>either</i> "supa" or "suva"</li>
+        </ul>
     </div>
     <script type="module" src="index.js"></script>
 </body>

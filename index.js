@@ -3,28 +3,6 @@ import { ped } from "./ped.js";
 const list = document.getElementById("list");
 const definitionArea = document.getElementById("definition");
 import fuzzy from "./fuzzy.js";
-// function buildDictionaryHtmlInDivs(dictionary) {
-//   let html = "";
-//   dictionary.forEach(entry => {
-//     html += `<div class="entry"><div class="head-word">${entry[0]}</div>  ${entry[1]}</div>`;
-//   });
-//   list.innerHTML = html;
-// }
-// function buildDictionaryHtml(dictionary) {
-//   let html = "<ul>";
-//   dictionary.forEach(entry => {
-//     html += `<li>${entry[0].toLowerCase()}</li>`;
-//   });
-//   list.innerHTML = html + "</ul>";
-// }
-// function buildDic(ped) {
-//   let html = "";
-//   ped.forEach(entry => {
-//     html += `[\`${entry.word}\`,\`${entry.text}\`],\n`;
-//   });
-//   console.log(html);
-// }
-// buildDic(ped);
 
 let fuzzyMode;
 
@@ -79,14 +57,6 @@ function createResultList() {
         ped[e.currentTarget.id][0]
       }" title="Go to the entry on SuttaCentral.net" target="_blank">🔗</a></h1>${ped[e.currentTarget.id][1]}`;
       window.scrollTo(0, 0);
-      // const terms = document.getElementsByClassName("term");
-      // console.log(terms);
-      // terms.addEventListener("click", e => {
-      //   definitionArea.innerHTML = `<h1>${ped[e.currentTarget.id][0]} <a href="https://suttacentral.net/define/${
-      //     ped[e.currentTarget.id][0]
-      //   }" title="Go to the entry on SuttaCentral.net" target="_blank">🔗</a></h1>${ped[e.currentTarget.id][1]}`;
-      //   window.scrollTo(0, 0);
-      // });
     });
   });
 }

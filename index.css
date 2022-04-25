@@ -6,6 +6,21 @@ body {
   font-family: sans-serif;
 }
 
+.code {
+  font-family: monospace;
+  color: #ffc000;
+}
+.instructions-list {
+  padding-left: 0.5rem;
+  list-style: none;
+}
+
+.instructions-list li {
+  padding-left: 22px;
+  text-indent: -22px;
+  margin-bottom: 0.3rem;
+}
+
 input#fuzzy-box {
   margin-right: 1rem;
 }
