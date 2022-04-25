@@ -74,6 +74,10 @@ a {
   cursor: default;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
 h1 {
   font-family: sans-serif;
   font-size: 1.2rem;

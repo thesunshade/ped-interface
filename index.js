@@ -51,12 +51,22 @@ function createResultList() {
   list.innerHTML = htmlList + "</ul>";
 
   const resultList = document.querySelectorAll(".item");
+  const regex = new RegExp("href='/define/(.+?)'", "gi");
   resultList.forEach(listItem => {
     listItem.addEventListener("click", e => {
       definitionArea.innerHTML = `<h1>${ped[e.currentTarget.id][0]} <a href="https://suttacentral.net/define/${
         ped[e.currentTarget.id][0]
-      }" title="Go to the entry on SuttaCentral.net" target="_blank">🔗</a></h1>${ped[e.currentTarget.id][1]}`;
+      }" title="Go to the entry on SuttaCentral.net" target="_blank">🔗</a></h1>
+      ${ped[e.currentTarget.id][1].replace(regex, 'id="$1" class="cross-ref"')}`;
+
       window.scrollTo(0, 0);
     });
   });
+}
+
+function replaceExternalLinks(string) {
+  console.log(string);
+  const regex = new RegExp("/href='/define/(.+)'", "gi");
+  string.replace(regex, "id='$1' class='cross-ref'");
+  return string;
 }
