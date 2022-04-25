@@ -67,8 +67,8 @@ inputWord.addEventListener("input", e => {
 
 const fuzzyBox = document.getElementById("fuzzy-box");
 fuzzyBox.addEventListener("click", e => {
-  console.log(e.originalTarget.checked);
-  console.log(inputWord.value);
+  // console.log(e.originalTarget.checked);
+  // console.log(inputWord.value);
   fuzzyMode = e.originalTarget.checked;
 });
 
