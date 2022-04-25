@@ -1,14 +1,23 @@
+:root {
+  --text: #ffe8a3;
+  --accent: #ffc000;
+}
+
+/* * {
+  border: solid 1px white;
+} */
+
 body {
   display: flex;
   flex-direction: row;
   background-color: rgb(20, 18, 2);
-  color: #ffe8a3;
+  color: var(--text);
   font-family: sans-serif;
 }
 
 .code {
   font-family: monospace;
-  color: #ffc000;
+  color: var(--accent);
 }
 .instructions-list {
   padding-left: 0.5rem;
@@ -22,10 +31,12 @@ body {
 }
 
 input#fuzzy-box {
-  margin-right: 1rem;
-}
-label#for-fuzzy-box {
+  /* margin-right: 1rem; */
   margin-left: 1rem;
+}
+
+input#fuzzy-box:checked + label {
+  color: var(--accent);
 }
 
 #definition {
@@ -40,21 +51,23 @@ label#for-fuzzy-box {
   flex-direction: column;
 }
 
-input {
+#word-input {
   font-size: 1.2rem;
   font-family: sans-serif;
   /* font-weight: bold; */
   padding: 0.4rem;
   margin-left: 1rem;
   margin-top: 1rem;
-  background-color: #ffc000;
+  margin-bottom: 0.5rem;
+  background-color: var(--accent);
   border: solid 2px black;
   border-radius: 10px;
+  max-width: 17rem;
 }
-input:focus {
+#word-input:focus {
   background-color: black;
-  outline: solid 2px #ffc000;
-  color: #ffc000;
+  outline: solid 2px var(--accent);
+  color: var(--accent);
 }
 
 .head-word {
@@ -67,7 +80,7 @@ input:focus {
 }
 
 a {
-  color: #ffc000;
+  color: var(--accent);
   text-decoration: none;
   font-weight: bold;
   font-family: sans-serif;
@@ -81,7 +94,7 @@ a:hover {
 h1 {
   font-family: sans-serif;
   font-size: 1.2rem;
-  color: #ffc000;
+  color: var(--text);
 }
 
 li p {
