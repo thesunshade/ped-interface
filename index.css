@@ -83,4 +83,8 @@ li p {
   ul.results li {
     margin-bottom: 0.5rem;
   }
+
+  dd {
+    margin-left: 0px;
+  }
 }
