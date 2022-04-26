@@ -10,7 +10,7 @@
 body {
   display: flex;
   flex-direction: row;
-  background-color: rgb(20, 18, 2);
+  background-color: #141202;
   color: var(--text);
   font-family: sans-serif;
 }

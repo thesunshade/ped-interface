@@ -1,14 +1,13 @@
-// import { dppnDpr } from "./dppnDpr.js";
-import { ped } from "./ped.js";
+import { ped } from "../ped.js";
 const list = document.getElementById("list");
 const definitionArea = document.getElementById("definition");
-import fuzzy from "./fuzzy.js";
+import fuzzy from "../fuzzy.js";
 
 let fuzzyMode;
 
 const inputWord = document.getElementById("word-input");
 inputWord.focus();
-inputWord.addEventListener("input", e => {
+inputWord.addEventListener("input", () => {
   if (!inputWord.value || inputWord.value.length <= 2) {
     list.innerHTML = "";
   } else if (inputWord.value && inputWord.value.length > 2) {
@@ -33,6 +32,16 @@ fuzzyBox.addEventListener("click", e => {
   createResultList();
 });
 
+function renderDefinition(wordIndex) {
+  const regex = new RegExp("href='/define/(.+?)'", "gi");
+  definitionArea.innerHTML = `<h1>${ped[wordIndex][0]} <a href="https://suttacentral.net/define/${
+    ped[wordIndex][0]
+  }" title="Go to the entry on SuttaCentral.net" target="_blank">🔗</a></h1>
+${ped[wordIndex][1].replace(regex, 'id="$1" class="cross-ref"')}`;
+  window.scrollTo(0, 0);
+  addListenerToCrossRefs();
+}
+
 function createResultList() {
   let htmlList = `<ul class="results">`;
   if (fuzzyMode === true) {
@@ -51,22 +60,28 @@ function createResultList() {
   list.innerHTML = htmlList + "</ul>";
 
   const resultList = document.querySelectorAll(".item");
-  const regex = new RegExp("href='/define/(.+?)'", "gi");
   resultList.forEach(listItem => {
     listItem.addEventListener("click", e => {
-      definitionArea.innerHTML = `<h1>${ped[e.currentTarget.id][0]} <a href="https://suttacentral.net/define/${
-        ped[e.currentTarget.id][0]
-      }" title="Go to the entry on SuttaCentral.net" target="_blank">🔗</a></h1>
-      ${ped[e.currentTarget.id][1].replace(regex, 'id="$1" class="cross-ref"')}`;
-
-      window.scrollTo(0, 0);
+      renderDefinition(e.currentTarget.id);
     });
   });
 }
 
-function replaceExternalLinks(string) {
-  console.log(string);
-  const regex = new RegExp("/href='/define/(.+)'", "gi");
-  string.replace(regex, "id='$1' class='cross-ref'");
-  return string;
+function addListenerToCrossRefs() {
+  const crossRefs = document.getElementsByClassName("cross-ref");
+  for (let i = 0; i < crossRefs.length; i++) {
+    crossRefs[i].addEventListener("click", e => {
+      console.log(e.target.text);
+      // find the index of current word
+      const index = () => {
+        for (let i = 0; i < ped.length; i++) {
+          if (e.target.text === ped[i][0]) {
+            return i;
+          }
+        }
+      };
+      const thisIndex = index();
+      renderDefinition(thisIndex);
+    });
+  }
 }
