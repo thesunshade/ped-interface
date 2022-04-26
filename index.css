@@ -42,6 +42,7 @@ body {
 
 #count {
   color: var(--disabled);
+  font-family: monospace;
 }
 
 input#fuzzy-box {
