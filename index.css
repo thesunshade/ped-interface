@@ -167,6 +167,15 @@ li p {
   margin-top: 2rem;
 }
 
+.links-area a {
+  position: relative;
+  top: 0;
+  transition: top ease 0.5s;
+}
+.links-area a:hover {
+  top: -3px;
+}
+
 input[type="checkbox"] {
   display: none;
 }
