@@ -17,7 +17,10 @@ inputWord.addEventListener("input", () => {
 
 const fuzzyBox = document.getElementById("fuzzy-box");
 
-if (localStorage.fuzzyMode === undefined) {
+const fuzzyVariableValue = localStorage.getItem("fuzzyMode");
+console.log(fuzzyVariableValue);
+console.log("hello");
+if (localStorage.fuzzyMode === null) {
   localStorage.fuzzyMode === true;
 } else if (localStorage.fuzzyMode === false) {
   fuzzyBox.checked = false;
