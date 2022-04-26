@@ -83,12 +83,18 @@ a {
   color: var(--accent);
   text-decoration: none;
   font-weight: bold;
-  font-family: sans-serif;
+  font-family: monospace;
   cursor: default;
 }
 
 a:hover {
   text-decoration: underline;
+  font-weight: 900 !important;
+}
+
+a.cross-ref {
+  /* font-weight: 400; */
+  font-family: sans-serif;
 }
 
 h1 {
