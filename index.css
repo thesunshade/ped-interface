@@ -36,7 +36,7 @@ body {
   flex-direction: row;
   justify-content: space-between;
   max-width: 17rem;
-  padding: 0 1rem;
+  padding: 0 1rem 0 2rem;
 }
 
 #count {
@@ -155,4 +155,35 @@ li p {
   dt {
     margin-bottom: 1rem;
   }
+}
+
+.links-area {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+.check-icon {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-repeat: no-repeat;
+  background-size: 12px;
+}
+
+input[type="checkbox"]:not(:checked) + .check-icon {
+  background-image: url(./images/checkbox--unchecked.svg);
+}
+input[type="checkbox"]:checked + .check-icon {
+  background-image: url(./images/checkbox--checked.svg);
+}
+
+img.checkbox {
+  height: 20px;
+  margin-right: 0.5rem;
 }

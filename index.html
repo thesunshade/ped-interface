@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon.png">
     <title>PED</title>
     <script type="module" src="index.js"></script>
 </head>
@@ -18,12 +18,18 @@
 
         <div id="status-bar">
             <div>
-                <input id="fuzzy-box" type="checkbox" name="fuzzy-box" checked>
-                <label for="fuzzy-box" id="for-fuzzy-box">fuzzy mode</label>
+                <label for="fuzzy-box" id="for-fuzzy-box"><input id="fuzzy-box" type="checkbox" name="fuzzy-box"
+                        checked><span class="check-icon"></span>
+                    fuzzy mode</label>
             </div>
             <div id="count"></div>
         </div>
         <div id="list"></div>
+        <div class="links-area" style="text-align: center;">
+            <a href="http://readingfaithfully.org"><img width="20px" src="./images/rf-yellow-black.png"></a>
+            <a href="https://github.com/thesunshade/ped-interface"><img width="20px"
+                    src="./images/githubmark48.png"></a>
+        </div>
     </div>
     <div id="definition">
         <h1>PTS Pali English Dictionary</h1>
@@ -38,10 +44,7 @@
                 mode disabled</li>
             <li><span class="code">su[pv]a</span> gives words that contain <i>either</i> "supa" or "suva"</li>
         </ul>
-        <div style="text-align: center;">
-            <a href="http://readingfaithfully.org"><img width="20px" src="./rf-yellow-black.png"></a>
-            <a href="https://github.com/thesunshade/ped-interface"><img width="20px" src="./githubmark48.png"></a>
-        </div>
+
     </div>
 
 </body>
