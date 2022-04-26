@@ -1,6 +1,7 @@
 :root {
   --text: #ffe8a3;
   --accent: #ffc000;
+  --disabled: #ffe8a390;
 }
 
 /* * {
@@ -30,9 +31,23 @@ body {
   margin-bottom: 0.3rem;
 }
 
+#status-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 17rem;
+  padding: 0 1rem;
+}
+
+#count {
+  color: var(--disabled);
+}
+
 input#fuzzy-box {
-  /* margin-right: 1rem; */
   margin-left: 1rem;
+}
+input#fuzzy-box + label {
+  color: var(--disabled);
 }
 
 input#fuzzy-box:checked + label {
@@ -42,7 +57,7 @@ input#fuzzy-box:checked + label {
 #definition {
   width: 70vw;
   margin-bottom: 1rem;
-  margin: 1rem;
+  margin: 1rem 1rem 1rem 3rem;
 }
 
 #list-area {
@@ -119,6 +134,7 @@ li p {
 
   #definition {
     width: auto;
+    margin: 1rem;
   }
 
   #list-area {
