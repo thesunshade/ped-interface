@@ -2,6 +2,7 @@
   --text: #ffe8a3;
   --accent: #ffc000;
   --disabled: #ffe8a390;
+  --background: #141202;
 }
 
 /* * {
@@ -11,7 +12,7 @@
 body {
   display: flex;
   flex-direction: row;
-  background-color: #141202;
+  background-color: var(--background);
   color: var(--text);
   font-family: sans-serif;
 }
@@ -162,7 +163,7 @@ li p {
   flex-direction: row;
   gap: 1rem;
   justify-content: center;
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 
 input[type="checkbox"] {

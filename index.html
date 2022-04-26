@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="index.css">
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon.png">
     <title>PED</title>
+    <meta name="theme-color" content="#141202">
     <script type="module" src="index.js"></script>
 </head>
 
@@ -39,6 +40,8 @@
         Use RegEx for wildcards. For example:
         <ul class="instructions-list">
             <li><span class="code">^dham</span> gives words that <i>start</i> with "dham"</li>
+            <li><span class="code">^...dhama</span> gives words that <i>start</i> with any three characters followed by
+                "dhama"</li>
             <li><span class="code">am$</span> gives words that <i>end</i> with "am"</li>
             <li><span class="code">dh*am</span> gives words that contain <i>either</i> "dham" or "dam"</li>
             <li><span class="code">su[pv]a</span> gives words that contain <i>either</i> "supa" or "suva"</li>
