@@ -1,4 +1,4 @@
-// import { ped } from "../ped.js";
+import { ped } from "../ped.js";
 import fuzzy from "../fuzzy.js";
 
 const list = document.getElementById("list");
@@ -9,7 +9,7 @@ const countArea = document.getElementById("count");
 
 let fuzzyMode;
 
-const ped = await import(`./ped.js`);
+// const ped = await import(`./ped.js`);
 
 inputWord.focus();
 inputWord.addEventListener("input", () => {
