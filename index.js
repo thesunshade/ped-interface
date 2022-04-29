@@ -9,9 +9,7 @@ const countArea = document.getElementById("count");
 
 let fuzzyMode;
 
-// const ped = await import(`./ped.js`);
-
-inputWord.focus();
+inputWord.focus(); // puts cursor in input box
 inputWord.addEventListener("input", () => {
   createResultList();
 });
