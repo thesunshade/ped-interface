@@ -1,8 +1,9 @@
-import { ped } from "../ped.js";
-import fuzzy from "../fuzzy.js";
+import { ped } from "./ped.js";
+import fuzzy from "./fuzzy.js";
+import renderDefinition from "./renderDefinition.js";
 
 const list = document.getElementById("list");
-const definitionArea = document.getElementById("definition");
+export const definitionArea = document.getElementById("definition");
 const inputWord = document.getElementById("word-input");
 const fuzzyBox = document.getElementById("fuzzy-box");
 const countArea = document.getElementById("count");
@@ -58,35 +59,6 @@ function createResultList() {
       listItem.addEventListener("click", e => {
         renderDefinition(e.currentTarget.id);
       });
-    });
-  }
-}
-
-function renderDefinition(wordIndex) {
-  const regex = new RegExp("href='/define/(.+?)'", "gi");
-  definitionArea.innerHTML = `<h1>${ped[wordIndex][0]} <a href="https://suttacentral.net/define/${
-    ped[wordIndex][0]
-  }" title="Go to the entry on SuttaCentral.net" target="_blank">🔗</a></h1>
-${ped[wordIndex][1].replace(regex, 'id="$1" class="cross-ref"')}`;
-  window.scrollTo(0, 0);
-  addListenerToCrossRefs();
-}
-
-function addListenerToCrossRefs() {
-  const crossRefs = document.getElementsByClassName("cross-ref");
-  for (let i = 0; i < crossRefs.length; i++) {
-    crossRefs[i].addEventListener("click", e => {
-      console.log(e.target.text);
-      // find the index of current word
-      const index = () => {
-        for (let i = 0; i < ped.length; i++) {
-          if (e.target.text === ped[i][0]) {
-            return i;
-          }
-        }
-      };
-      const thisIndex = index();
-      renderDefinition(thisIndex);
     });
   }
 }
