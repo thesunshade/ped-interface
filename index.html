@@ -9,7 +9,6 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon.png">
     <title>PED</title>
     <meta name="theme-color" content="#141202">
-    <script type="module" src="index.js"></script>
 </head>
 
 <body>
@@ -54,14 +53,14 @@
                 definition.</b></p>
         Use RegEx for wildcards. For example:
         <ul class="instructions-list">
-            <li><span class="code">^dham</span> gives words that <i>start</i> with "dham"</li>
-            <li><span class="code">^...dhama</span> gives words that <i>start</i> with any three characters followed by
+            <li><span class="code">^dham</span> words <i>starting</i> with "dham"</li>
+            <li><span class="code">^...dhama</span> words <i>starting</i> with any three characters before
                 "dhama"</li>
-            <li><span class="code">am$</span> gives words that <i>end</i> with "am"</li>
-            <li><span class="code">^abhi.*ika$</span> gives words that <i>start</i> with "abhi" and <i>ends</i> with
+            <li><span class="code">am$</span> words that <i>end</i> with "am"</li>
+            <li><span class="code">^abhi.*ika$</span> words <i>starting</i> with "abhi" and <i>ending</i> with
                 "ika"</li>
-            <li><span class="code">dh*am</span> gives words that contain <i>either</i> "dham" or "dam"</li>
-            <li><span class="code">su[pv]a</span> gives words that contain <i>either</i> "supa" or "suva"</li>
+            <li><span class="code">dh*am</span> words containing <i>either</i> "dham" or "dam"</li>
+            <li><span class="code">su[pv]a</span> words containing <i>either</i> "supa" or "suva"</li>
         </ul>
         <p>For best results, disable fuzzy mode when using wildcards.</p>
         <p>| <a href="https://discourse.suttacentral.net/t/a-mini-interface-for-the-ped/24432">Feedback</a> | <a
@@ -69,6 +68,7 @@
 
     </div>
 
+    <script type="module" src="./index.js"></script>
 </body>
 
 </html>
