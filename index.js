@@ -10,7 +10,7 @@ export let fuzzyMode;
 
 inputWord.focus(); // puts cursor in input box
 inputWord.addEventListener("input", () => {
-  createResultList();
+  renderResultListToScreen();
 });
 
 // Fuzzy search setting
@@ -22,8 +22,14 @@ if (localStorage.fuzzyMode === null) {
 } else {
   fuzzyMode = true;
 }
-fuzzyBox.addEventListener("click", e => {
+fuzzyBox.addEventListener("click", () => {
   fuzzyMode = fuzzyBox.checked;
   localStorage.fuzzyMode = fuzzyBox.checked;
-  createResultList();
+  renderResultListToScreen();
 });
+
+function renderResultListToScreen() {
+  const { htmlList, resultCount } = createResultList();
+  list.innerHTML = htmlList;
+  countArea.innerHTML = resultCount;
+}

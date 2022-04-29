@@ -1,5 +1,5 @@
 import { ped } from "./ped.js";
-import fuzzy from "./fuzzy.js";
+import fuzz from "./fuzz.js";
 import renderDefinition from "./renderDefinition.js";
 import { inputWord, list, fuzzyMode, countArea } from "./index.js";
 
@@ -11,7 +11,7 @@ export default function createResultList() {
     let resultCount = 0;
     if (fuzzyMode === true) {
       ped.forEach((item, index) => {
-        if (new RegExp(fuzzy(inputWord.value), "i").test(fuzzy(item[0]))) {
+        if (new RegExp(fuzz(inputWord.value), "i").test(fuzz(item[0]))) {
           htmlList += `<li class="item" id="${index}">${item[0]}</li>`;
           resultCount++;
         }
@@ -24,8 +24,7 @@ export default function createResultList() {
         }
       });
     }
-    list.innerHTML = htmlList + "</ul>";
-    countArea.innerHTML = resultCount;
+    htmlList += "</ul>";
 
     const resultList = document.querySelectorAll(".item");
     resultList.forEach(listItem => {
@@ -33,5 +32,7 @@ export default function createResultList() {
         renderDefinition(e.currentTarget.id);
       });
     });
+
+    return { htmlList, resultCount };
   }
 }
