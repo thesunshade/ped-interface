@@ -1,5 +1,6 @@
 import createResultList from "./createResultList.js";
 import renderDefinition from "./renderDefinition.js";
+import { ped } from "./ped.js";
 
 export const list = document.getElementById("list");
 export const definitionArea = document.getElementById("definition");
@@ -10,6 +11,15 @@ export const countArea = document.getElementById("count");
 export let fuzzyMode;
 
 inputWord.focus(); // puts cursor in input box
+
+// initialize
+if (document.location.search) {
+  const word = document.location.search.replace("?", "");
+  for (let i = 0; i < ped.length; i++) {
+    if (decodeURI(word) === ped[i][0]) renderDefinition(i);
+  }
+}
+
 inputWord.addEventListener("input", () => {
   renderResultListToScreen(inputWord.value);
 });
