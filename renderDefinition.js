@@ -10,4 +10,5 @@ ${ped[wordIndex][1].replace(regex, 'id="$1" class="cross-ref"')}`;
   window.scrollTo(0, 0);
   addListenerToCrossRefs();
   history.pushState({ page: ped[wordIndex][0] }, "", `?${word}`);
+  document.title = word;
 }
