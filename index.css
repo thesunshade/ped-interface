@@ -68,6 +68,19 @@ input#fuzzy-box:checked + label {
   flex-direction: column;
 }
 
+.sc-link a img {
+  filter: opacity(50%);
+  position: relative;
+  top: 0;
+  transition: all ease 0.5s;
+  vertical-align: middle;
+}
+
+.sc-link a img:hover {
+  top: -3px;
+  filter: opacity(100%);
+}
+
 #word-input {
   font-size: 1.2rem;
   font-family: sans-serif;
@@ -174,8 +187,9 @@ li p {
 }
 .links-area a:hover {
   top: -3px;
-  
 }
+
+/* check box */
 
 input[type="checkbox"] {
   display: none;

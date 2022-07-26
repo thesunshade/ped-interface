@@ -24,10 +24,6 @@ function reloadPage() {
 
 reloadPage();
 
-// window.addEventListener("popstate", event => {
-//   reloadPage();
-// });
-
 inputWord.addEventListener("input", () => {
   renderResultListToScreen(inputWord.value);
 });
