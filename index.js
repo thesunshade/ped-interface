@@ -15,7 +15,7 @@ inputWord.focus(); // puts cursor in input box
 // initialize
 function reloadPage() {
   if (document.location.search) {
-    const word = document.location.search.replace("?", "");
+    const word = document.location.search.replace("?q=", "");
     for (let i = 0; i < ped.length; i++) {
       if (decodeURI(word) === ped[i][0]) renderDefinition(i);
     }

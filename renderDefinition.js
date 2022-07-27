@@ -15,6 +15,6 @@ ${definition}`;
 
   window.scrollTo(0, 0);
   addListenerToCrossRefs();
-  history.pushState({ page: word }, "", `?${word}`);
+  history.pushState({ page: word }, "", `?q=${word}`);
   document.title = word;
 }
