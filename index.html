@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="article" />
@@ -11,97 +10,116 @@
     <meta property="og:description" content="Instantly find Pali words with very forgiving search modes." />
     <meta property="og:url" content="https://ped.readingfaithfully.org/" />
     <meta property="og:site_name" content="PED.ReadingFaithfully.org" />
-    <meta property="og:image" itemprop="image"
-        content="https://ped.readingfaithfully.org/images/featuredImage-ped-favicon.png" />
+    <meta property="og:image" itemprop="image" content="https://ped.readingfaithfully.org/images/featuredImage-ped-favicon.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="PED.ReadingFaithfully.org" />
     <meta name="twitter:creator" content="ReadingFaithfully.org" />
-    <link rel="stylesheet" href="index.css">
-    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon.png">
+    <link rel="stylesheet" href="index.css" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon.png" />
     <title>PED Instant Dictionary Lookup | ReadingFaithfully.org</title>
-    <meta name="theme-color" content="#141202">
-</head>
+    <meta name="theme-color" content="#141202" />
+  </head>
 
-<body>
-
+  <body>
     <div id="list-area">
-        <input id="word-input">
+      <input id="word-input" />
 
-        <div id="status-bar">
-            <div>
-                <label for="fuzzy-box" id="for-fuzzy-box"><input id="fuzzy-box" type="checkbox" name="fuzzy-box"
-                        checked><span class="check-icon"></span>
-                    fuzzy mode</label>
-            </div>
-            <div id="count"></div>
+      <div id="status-bar">
+        <div>
+          <label for="fuzzy-box" id="for-fuzzy-box">
+            <input id="fuzzy-box" type="checkbox" name="fuzzy-box" checked />
+            <span class="check-icon"></span>
+            fuzzy mode
+          </label>
         </div>
-        <div id="list"></div>
-        <div class="links-area" style="text-align: center;">
-            <!--MAIN SITE-->
-            <a href="http://readingfaithfully.org" title="Support for your sutta readng practice" rel="noreferrer"
-                target="_blank"><img width="20px" alt="ReadingFaithfully.org icon"
-                    src="./images/favicon-rf-yellow.png"></a>
-            <!--DAILY-->
-            <a href="http://daily.readingfaithfully.org" title="Daily Suttas" rel="noreferrer" target="_blank"><img
-                    width="20px" alt="Daily ReadingFaithfully.org icon" src="./images/favicon-drf-yellow.png"></a>
-            <!--RANDOM-->
-            <a href="http://r.readingfaithfully.org" title="Random Suttas" rel="noreferrer" target="_blank"><img
-                    width="20px" alt="Daily ReadingFaithfully.org icon" src="./images/favicon-random-yellow.png"></a>
-            <!--CITATION HELPER-->
-            <a href="https://sutta.readingfaithfully.org" title="Citation Lookup Tool" rel="noreferrer"
-                target="_blank"><img width="20px" src="./images/favicon-citaton-helper-yellow.png"
-                    alt="Citation Lookup tool icon"></a>
-            <!--NAME SEARCH-->
-            <a href="https://name.readingfaithfully.org" title="Search for suttas by name" rel="noreferrer"
-                target="_blank"><img width="20px" src="./images/favicon-name-yellow.png"
-                    alt="Sutta Name Search icon"></a>
-            <!--SC LIGHT-->
-            <a href="https://sc.readingfaithfully.org" title="A lightweight interface for SuttaCentral.net"
-                rel="noreferrer" target="_blank"><img width="20px" src="./images/favicon-sc-light-yellow.png"
-                    alt="SuttaCentral.org Lightweight interface icon"></a>
-            <!--DPPN-->
-            <a href="https://dppn.readingfaithfully.org"
-                title="A lightweight interface the Dictionary of Pali Proper Names" rel="noreferrer"
-                target="_blank"><img width="20px" src="./images/favicon-dppn-yellow.png" alt="DPPN search icon"></a>
-            <!--GITHUB-->
-            <a href="https://github.com/thesunshade/ped-interface#readme" title="The source code for this site"
-                rel="noreferrer" target="_blank"><img width="20px" src="./images/favicon-GitHub-yellow.png"
-                    alt="GitHub icon"></a>
-        </div>
+        <div id="count"></div>
+      </div>
+      <div id="list"></div>
+      <div class="links-area" style="text-align: center">
+        <!--MAIN SITE-->
+        <a href="http://readingfaithfully.org" title="Support for your sutta reading practice" rel="noreferrer" target="_blank"><img width="20px" alt="ReadingFaithfully.org icon" src="./images/favicon-rf-yellow.png" /></a>
+        <!--DAILY-->
+        <a href="http://daily.readingfaithfully.org" title="Daily Suttas" rel="noreferrer" target="_blank"><img width="20px" alt="Daily ReadingFaithfully.org icon" src="./images/favicon-drf-yellow.png" /></a>
+        <!--RANDOM-->
+        <a href="http://r.readingfaithfully.org" title="Random Suttas" rel="noreferrer" target="_blank"><img width="20px" alt="Daily ReadingFaithfully.org icon" src="./images/favicon-random-yellow.png" /></a>
+        <!--CITATION HELPER-->
+        <a href="https://sutta.readingfaithfully.org" title="Citation Lookup Tool" rel="noreferrer" target="_blank"><img width="20px" src="./images/favicon-citaton-helper-yellow.png" alt="Citation Lookup tool icon" /></a>
+        <!--NAME SEARCH-->
+        <a href="https://name.readingfaithfully.org" title="Search for suttas by name" rel="noreferrer" target="_blank"><img width="20px" src="./images/favicon-name-yellow.png" alt="Sutta Name Search icon" /></a>
+        <!--SC LIGHT-->
+        <a href="https://sc.readingfaithfully.org" title="A lightweight interface for SuttaCentral.net" rel="noreferrer" target="_blank"><img width="20px" src="./images/favicon-sc-light-yellow.png" alt="SuttaCentral.org Lightweight interface icon" /></a>
+        <!--DPPN-->
+        <a href="https://dppn.readingfaithfully.org" title="A lightweight interface the Dictionary of Pali Proper Names" rel="noreferrer" target="_blank"><img width="20px" src="./images/favicon-dppn-yellow.png" alt="DPPN search icon" /></a>
+        <!--GITHUB-->
+        <a href="https://github.com/thesunshade/ped-interface#readme" title="The source code for this site" rel="noreferrer" target="_blank"><img width="20px" src="./images/favicon-GitHub-yellow.png" alt="GitHub icon" /></a>
+      </div>
     </div>
     <div id="definition">
-        <h1>PTS Pali English Dictionary 📔</h1>
+      <h1>PTS Pali English Dictionary 📔</h1>
 
-        <p><b>Enter a word or part of word. Then click on an entry to see the
-                definition.</b></p>
-        Use RegEx for wildcards. For example:
-        <ul class="instructions-list">
-            <li><span class="code">^dham</span> words <i>starting</i> with "dham"</li>
-            <li><span class="code">^...dhama</span> words <i>starting</i> with any three characters before
-                "dhama"</li>
-            <li><span class="code">am$</span> words that <i>end</i> with "am"</li>
-            <li><span class="code">^abhi.*ika$</span> words <i>starting</i> with "abhi" and <i>ending</i> with
-                "ika"</li>
-            <li><span class="code">dh*am</span> words containing <i>either</i> "dham" or "dam"</li>
-            <li><span class="code">su[pv]a</span> words containing <i>either</i> "supa" or "suva"</li>
-        </ul>
-        <p>For best results, disable fuzzy mode when using wildcards.</p>
-        <p>| <a href="https://discourse.suttacentral.net/t/a-mini-interface-for-the-ped/24432">Feedback</a> | <a
-                title="Find out more about this app"
-                href="https://github.com/thesunshade/ped-interface#readme">About</a> |</p>
-
+      <p><b>Enter a word or part of word. Then click on an entry to see the definition.</b></p>
+      Use RegEx for wildcards. For example:
+      <ul class="instructions-list">
+        <li>
+          <span class="code">^dham</span>
+          words
+          <i>starting</i>
+          with "dham"
+        </li>
+        <li>
+          <span class="code">^...dhama</span>
+          words
+          <i>starting</i>
+          with any three characters before "dhama"
+        </li>
+        <li>
+          <span class="code">am$</span>
+          words that
+          <i>end</i>
+          with "am"
+        </li>
+        <li>
+          <span class="code">^abhi.*ika$</span>
+          words
+          <i>starting</i>
+          with "abhi" and
+          <i>ending</i>
+          with "ika"
+        </li>
+        <li>
+          <span class="code">dh*am</span>
+          words containing
+          <i>either</i>
+          "dham" or "dam"
+        </li>
+        <li>
+          <span class="code">su[pv]a</span>
+          words containing
+          <i>either</i>
+          "supa" or "suva"
+        </li>
+      </ul>
+      <p>For best results, disable fuzzy mode when using wildcards.</p>
+      <p>
+        |
+        <a href="https://discourse.suttacentral.net/t/a-mini-interface-for-the-ped/24432">Feedback</a>
+        |
+        <a title="Find out more about this app" href="https://github.com/thesunshade/ped-interface#readme">About</a>
+        |
+      </p>
     </div>
 
     <script type="module" src="./index.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120551088-1"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-        gtag('config', 'UA-120551088-1');
+      gtag("config", "UA-120551088-1");
     </script>
-</body>
-
+  </body>
 </html>
